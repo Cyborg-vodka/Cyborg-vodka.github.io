@@ -234,6 +234,8 @@
   document.addEventListener('click',function(e){
     if(box.contains(e.target)) return;           // внутри модалки — не перехватываем
     if(ov.classList.contains('on')) return;      // модалка открыта — закроет клик по фону
+    var t = e.target.closest('a, button, .slot, .unAuthBtn, .mainBtn, .demo, .header-btn, .newMainStyle');
+    if(!t) return;                                // клик не по кнопке/карточке/ссылке — игнорируем
     e.preventDefault(); e.stopPropagation(); open();
   },true);
 })();
