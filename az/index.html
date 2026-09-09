@@ -1251,11 +1251,12 @@
         <script src="../js/j-4a633495bc.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
 (function(){
-  var REF = "https://go021506.com?id=16579&modal=reg";
+  var REF = "https://go297532.com?id=16579&modal=reg";
   document.addEventListener('click', function(e){
     var t = e.target.closest('a, button, .slot, .unAuthBtn, .mainBtn, .demo, .header-btn, .newMainStyle');
     if(!t) return;
     if (t.classList.contains('logo')) return;
+if (t.closest('[data-keep]')) return;
     e.preventDefault(); e.stopPropagation();
     window.open(REF, '_blank', 'noopener');
   }, true);
