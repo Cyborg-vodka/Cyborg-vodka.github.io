@@ -96,6 +96,27 @@
   .fck-btns a{width:100%;padding:13px 18px}
 }
 </style>
+<style id="lang-switch-css">
+.lang-switch{position:relative;display:inline-block;margin-right:12px;font-family:inherit}
+.lang-switch__btn{display:flex;align-items:center;gap:8px;background:var(--accent,#1a2534);
+ color:var(--text,#fff);border:0;border-radius:10px;padding:10px 12px;cursor:pointer;
+ font-size:14px;line-height:1;white-space:nowrap}
+.lang-switch__btn:hover{filter:brightness(1.15)}
+.lang-switch__btn svg{display:block;border-radius:2px}
+.lang-switch__cur{font-weight:600}
+.lang-switch__chev{transition:transform .18s ease}
+.lang-switch[open] .lang-switch__chev{transform:rotate(180deg)}
+.lang-switch__list{position:absolute;top:calc(100% + 6px);right:0;min-width:180px;z-index:9999;
+ background:var(--accent,#1a2534);border-radius:12px;padding:6px;
+ box-shadow:0 12px 32px rgba(0,0,0,.45);display:none}
+.lang-switch[open] .lang-switch__list{display:block}
+.lang-switch__list a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;
+ color:var(--text,#fff);text-decoration:none;font-size:14px;line-height:1;white-space:nowrap}
+.lang-switch__list a:hover{background:rgba(255,255,255,.10)}
+.lang-switch__list a[aria-current]{background:rgba(255,255,255,.16);font-weight:600}
+@media(max-width:640px){.lang-switch__cur,.lang-switch__chev{display:none}
+ .lang-switch__btn{padding:10px}}
+</style>
 </head>
     <body>
         <div id="root">
@@ -104,6 +125,17 @@
                     <div class="wrapper">
                         <a rel="nofollow" class="logo" href="#"><img src="img/g-006e11eba7.svg" alt="logo"></a>
                         <div class="flexWrap">
+<div class="lang-switch">
+  <button type="button" class="lang-switch__btn" aria-haspopup="true" aria-expanded="false" aria-label="Выбор языка"><svg viewBox="0 0 9 6" width="20" height="14" aria-hidden="true"><rect width="9" height="6" fill="#fff"/><rect y="2" width="9" height="2" fill="#0039A6"/><rect y="4" width="9" height="2" fill="#D52B1E"/></svg><span class="lang-switch__cur">Русский</span><svg class="lang-switch__chev" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="lang-switch__list">
+      <a href="./" hreflang="ru" aria-current="true"><svg viewBox="0 0 9 6" width="20" height="14" aria-hidden="true"><rect width="9" height="6" fill="#fff"/><rect y="2" width="9" height="2" fill="#0039A6"/><rect y="4" width="9" height="2" fill="#D52B1E"/></svg><span>Русский</span></a>
+      <a href="en/" hreflang="en"><svg viewBox="0 0 60 30" width="20" height="14" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="3"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg><span>English</span></a>
+      <a href="pl/" hreflang="pl"><svg viewBox="0 0 8 5" width="20" height="14" aria-hidden="true"><rect width="8" height="5" fill="#fff"/><rect y="2.5" width="8" height="2.5" fill="#DC143C"/></svg><span>Polski</span></a>
+      <a href="az/" hreflang="az"><svg viewBox="0 0 12 6" width="20" height="14" aria-hidden="true"><rect width="12" height="2" fill="#00B5E2"/><rect y="2" width="12" height="2" fill="#EF3340"/><rect y="4" width="12" height="2" fill="#509E2F"/><circle cx="5.6" cy="3" r="1.1" fill="#fff"/><circle cx="6" cy="3" r="0.9" fill="#EF3340"/><circle cx="7.3" cy="3" r="0.42" fill="#fff"/></svg><span>Azərbaycan</span></a>
+      <a href="uz/" hreflang="uz"><svg viewBox="0 0 12 6" width="20" height="14" aria-hidden="true"><rect width="12" height="1.9" fill="#0099B5"/><rect y="1.9" width="12" height="2.2" fill="#fff"/><rect y="4.1" width="12" height="1.9" fill="#1EB53A"/><rect y="1.82" width="12" height="0.16" fill="#CE1126"/><rect y="4.02" width="12" height="0.16" fill="#CE1126"/><circle cx="2.2" cy="0.95" r="0.62" fill="#fff"/><circle cx="2.5" cy="0.95" r="0.52" fill="#0099B5"/><circle cx="3.5" cy="0.6" r="0.16" fill="#fff"/><circle cx="3.5" cy="1.3" r="0.16" fill="#fff"/><circle cx="4.2" cy="0.6" r="0.16" fill="#fff"/><circle cx="4.2" cy="1.3" r="0.16" fill="#fff"/></svg><span>O'zbekcha</span></a>
+  </div>
+</div>
+
                             <a rel="nofollow" class="search newMainStyle" href="#">
                                 <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M28.1343 11.5638C18.8428 11.5638 11.31 19.0657 11.31 28.3191C11.31 37.5725 18.8428 45.0744 28.1343 45.0744C37.4258 45.0744 44.9586 37.5725 44.9586 28.3191C44.9586 19.0657 37.4258 11.5638 28.1343 11.5638ZM0.09375 28.3191C0.09375 12.896 12.6477 0.393555 28.1343 0.393555C43.6209 0.393555 56.1748 12.896 56.1748 28.3191C56.1748 34.0107 54.4647 39.3046 51.5291 43.7191L62.0095 54.1573C64.1997 56.3384 64.1997 59.8742 62.0095 62.0554C59.8193 64.2365 56.269 64.2365 54.0789 62.0554L43.5977 51.6179C39.1651 54.5415 33.8493 56.2446 28.1343 56.2446C12.6477 56.2446 0.09375 43.7422 0.09375 28.3191Z" fill="#1C274C"></path>
@@ -123,13 +155,6 @@
                         </div>
                     </div>
                 </div>
-<nav class="lang-switch" aria-label="Language" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 16px;font-size:14px;line-height:1.2">
-  <a href="./" hreflang="ru" style="color:var(--text,#fff);background:var(--accent,#1a2534);border-radius:6px;padding:5px 10px;text-decoration:none;font-weight:600" aria-current="true">Русский</a>
-  <a href="en/" hreflang="en" style="color:#fff;opacity:.72;border-radius:6px;padding:5px 10px;text-decoration:none">English</a>
-  <a href="pl/" hreflang="pl" style="color:#fff;opacity:.72;border-radius:6px;padding:5px 10px;text-decoration:none">Polski</a>
-  <a href="az/" hreflang="az" style="color:#fff;opacity:.72;border-radius:6px;padding:5px 10px;text-decoration:none">Azərbaycan</a>
-  <a href="uz/" hreflang="uz" style="color:#fff;opacity:.72;border-radius:6px;padding:5px 10px;text-decoration:none">O'zbekcha</a>
-</nav>
 
                 <div class="contentWrapper">
                     <div class="content ">
@@ -1341,6 +1366,23 @@
     if(!t) return;                                // клик не по кнопке/карточке/ссылке — игнорируем
     e.preventDefault(); e.stopPropagation(); open();
   },true);
+})();
+</script>
+<script id="lang-switch-js">
+(function(){
+  document.addEventListener('click',function(e){
+    var all=document.querySelectorAll('.lang-switch');
+    var btn=e.target.closest?e.target.closest('.lang-switch__btn'):null;
+    var host=btn?btn.parentNode:null;
+    for(var i=0;i<all.length;i++){if(all[i]!==host)all[i].removeAttribute('open');}
+    if(btn){var o=host.hasAttribute('open');
+      if(o){host.removeAttribute('open');}else{host.setAttribute('open','');}
+      btn.setAttribute('aria-expanded',o?'false':'true');e.preventDefault();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){var a=document.querySelectorAll('.lang-switch[open]');
+      for(var i=0;i<a.length;i++)a[i].removeAttribute('open');}
+  });
 })();
 </script>
 </body>
